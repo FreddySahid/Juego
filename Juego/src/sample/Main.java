@@ -4,15 +4,27 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        ContenedorPrincipal contenido = new ContenedorPrincipal();
+        ScrollPane root = new ScrollPane();
+        root.setContent(contenido);
+        root.setFitToHeight(true);
+        root.setFitToWidth(true);
+
+
+        Scene escena = new Scene(root, 1000, 550);
+
+
+        primaryStage.setTitle("Super juego");
+        primaryStage.setScene(escena);
+
         primaryStage.show();
     }
 

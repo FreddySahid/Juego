@@ -3,13 +3,13 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
-public class ContenedorPrincipal extends BorderPane{
+public class ContenedorPrincipal extends Pane{
 
-    private AreaPelota areaPelota;
+    AreaPelota areaPelota;
 
     public ContenedorPrincipal(){
         areaPelota = new AreaPelota();
-        setCenter(areaPelota);
+        getChildren().add(areaPelota);
 
     }
 }

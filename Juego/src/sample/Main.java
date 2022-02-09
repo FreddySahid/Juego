@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Bounds;
+import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,6 +19,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -86,13 +88,16 @@ public class Main extends Application {
 
         cont = 0;
         puntaje = new Label("");
+        puntaje.setFont(Font.font("arial", 15));
+        puntaje.setPadding(new Insets(10, 10, 10, 10));
         canvas.setOnMouseClicked(new EventHandler<MouseEvent>(){
 
             @Override
             public void handle(MouseEvent mouseEvent) {
                 cont+=1;
                 puntaje.setText("Número de clicks: " + cont);
-                canvas.getChildren().add(puntaje);
+                borderPane.setTop(puntaje);
+                borderPane.getChildren().add(puntaje);
             }
         });
 
